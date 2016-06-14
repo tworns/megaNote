@@ -1,13 +1,14 @@
+
 (function() {
   var app = angular.module('meganote', [
     'ui.router',
     'meganote.notes'
   ]);
 
-  function config($stateProvider, $urlRouterProvider) {
+  function config($urlRouterProvider) {
     $urlRouterProvider.otherwise('/notes');
   }
 
-  config.$inject = ['$stateProvider', '$urlRouterProvider'];
+  config.$inject = ['$urlRouterProvider'];
   app.config(config);
 })();
