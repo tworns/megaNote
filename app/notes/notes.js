@@ -20,8 +20,9 @@
         templateUrl: 'notes/notes-form.html'
       });
     }
-      noteCtrl.$inject = ['$scope'];
-    function noteCtrl ($scope) {
+      noteCtrl.$inject = ['$scope', '$state'];
+    function noteCtrl ($scope, $state) {
+      $state.go('notes.form');
       $scope.editing = false;
       $scope.notes = [];
       $scope.note = {
