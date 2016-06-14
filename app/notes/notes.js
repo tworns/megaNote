@@ -1,33 +1,35 @@
+(function(){
+    angular
+    .module('meganote.notes', ['ui.router'])
+    .config(notesConfig)
+    .controller('NotesController', noteCtrl); //controller name won't conflict with variable names. Controllers define funcitonality for given scope.
 
-angular.module('meganote.notes', [
-  'ui.router'
-])
+    function notesConfig($stateProvider) {
+      $stateProvider
 
-.config(function($stateProvider) {
-  $stateProvider
+      .state('notes', {
+          url: '/notes',
+          templateUrl: '/notes/notes.html',
+          controller: 'NotesController' //controller is inherited by child state
+        })
 
-  .state('notes', {
-      url: '/notes',
-      templateUrl: '/notes/notes.html',
-      controller: 'NotesController' //controller is inherited by child state
-    })
+      .state('notes.form', { //this is a child state
+        url: '/:noteId',
+        templateUrl: 'notes/notes-form.html'
+      });
+    }
 
-  .state('notes.form', { //this is a child state
-    url: '/:noteId',
-    templateUrl: 'notes/notes-form.html'
-  });
-})
+    function noteCtrl ($scope) {
+      $scope.editing = false;
+      $scope.notes = [];
+      $scope.note = {
+        title: "",
+        data: ""
+      };
+      $scope.addNote = function(){
+        $scope.notes.push($scope.note);
+        $scope.note = { title: '', data: '' };
+      };
+    }
 
-.controller('NotesController', function($scope) {//defines functionality for a given scope
-  $scope.editing = false;
-  $scope.notes = [];
-  $scope.note = {
-    title: "",
-    data: ""
-  };
-  $scope.addNote = function(){
-    $scope.notes.push($scope.note);
-    $scope.note = { title: '', data: '' };
-  };
-
-});
+})();
