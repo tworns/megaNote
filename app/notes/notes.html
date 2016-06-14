@@ -5,35 +5,14 @@
         New Note
       </button>
 
-      <form ng-submit = 'addNote()' ng-hide = 'editing'>
-        <p>
-          <input
-            type="text"
-            name="title"
-            id="note_title"
-            ng-model = "note.title"
-            placeholder="Title your note">
-        </p>
-        <p>
-          <textarea
-            name="body_html"
-            ng-model = "note.data"
-            placeholder="Just start typing..."
-            ></textarea>
-        </p>
-        <div class="form-actions">
-          <input
-            type="submit"
-            name="commit"
-            value="Save"
-            class="btn btn-default">
-        </div>
-      </form>
-
-      <ul id="notes">
+        <ul id="notes">
           <li ng-repeat = "note in notes track by $index">
-            <span ng-bind = "note.title"></span>
-            <span ng-bind = "note.data"></span>
+            {{note.title}}
+            <br>
+            {{note.data}}
+            <!-- two above lines same effect as commented code below -->
+            <!-- <span ng-bind = "note.title"></span>
+            <span ng-bind = "note.data"></span> -->
           </li>
       </ul>
     </nav>
