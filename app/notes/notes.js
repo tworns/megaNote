@@ -4,6 +4,8 @@
     .config(notesConfig)
     .controller('NotesController', noteCtrl); //controller name won't conflict with variable names. Controllers define funcitonality for given scope.
 
+    notesConfig.$inject = ['$stateProvider']; //contains arguments to notes config IN ORDER!
+
     function notesConfig($stateProvider) {
       $stateProvider
 
@@ -18,7 +20,7 @@
         templateUrl: 'notes/notes-form.html'
       });
     }
-
+      noteCtrl.$inject = ['$scope'];
     function noteCtrl ($scope) {
       $scope.editing = false;
       $scope.notes = [];
