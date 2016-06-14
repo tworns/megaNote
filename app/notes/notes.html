@@ -6,7 +6,7 @@
       </button>
 
         <ul id="notes">
-          <li ng-repeat = "note in notes track by $index">
+          <li ng-repeat = "note in notes track by $index" ng-click = 'edit(note)'>
             {{note.title}}
             <br>
             {{note.data}}

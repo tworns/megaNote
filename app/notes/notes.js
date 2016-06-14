@@ -33,6 +33,10 @@
         $scope.notes.push($scope.note);
         $scope.note = { title: '', data: '' };
       };
+      $scope.edit = function(note){
+        $scope.note = note;
+      };
     }
+
 
 })();
