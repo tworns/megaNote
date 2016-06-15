@@ -31,11 +31,16 @@
       body_html: ''
     };
     $scope.save = function(){
-      NotesService.create($scope.note);
+      if($scope.note._id){
+        NotesService.update($scope.note);
+      }
+      else {
+        NotesService.create($scope.note);
+      }
       $scope.note = { title: '', body_html: '' };
     };
     $scope.edit = function(note){
-      $scope.note = note;
+      $scope.note = angular.copy(note);
     };
     $scope.clearForm = function(){
       $scope.note = { title: '', body_html: '' };
