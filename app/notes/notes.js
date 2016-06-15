@@ -41,8 +41,13 @@
       $scope.note = { title: '', body_html: '' };
     };
     $scope.delete = function(){
+
+      for(var i = 0; i< $scope.notes.length; i++) {
+        if($scope.notes[i].id === $scope.note.id){
+          $scope.notes.splice(i,1);
+        }
+      }
       NotesService.delete($scope.note);
-      $scope.notes.shift();
       $scope.note = { title: '', body_html: '' };
     };
     $scope.update = function(){
