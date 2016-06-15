@@ -20,6 +20,7 @@
       });
       notesPromise.then(function(res){
         service.notes.unshift(res.data.note);
+        service.note = res.data.note;
       });
       return notesPromise;
     };
@@ -27,6 +28,7 @@
       var notesPromise = $http.delete('https://meganote.herokuapp.com/notes/' + note._id, { note: note});
       notesPromise.then(function(res){
         service.removeById(res.data._id);
+        service.notes = res.data;
       });
       return notesPromise;
 

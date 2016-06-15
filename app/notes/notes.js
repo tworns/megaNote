@@ -37,8 +37,7 @@
       else {
         NotesService.create($scope.note);
       }
-      $scope.note = res.data.note;
-      $scope.note = { title: '', body_html: '' };
+    //  $scope.note = { title: '', body_html: '' };
     };
     $scope.edit = function(note){
       $scope.note = angular.copy(note);
