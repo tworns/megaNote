@@ -1,4 +1,4 @@
-<form ng-submit = 'addNote()'>
+<form >
   <p>
     <input
       type="text"
@@ -10,15 +10,28 @@
   <p>
     <textarea
       name="body_html"
-      ng-model = "note.data"
+      ng-model = "note.body_html"
       placeholder="Just start typing..."
       ></textarea>
   </p>
   <div class="form-actions">
     <input
-      type="submit"
+      type="button"
       name="commit"
+      ng-click = 'save()'
       value="Save"
       class="btn btn-default">
+      <input
+        type="button"
+        name="update"
+          ng-click = 'update()'
+        value="Update"
+        class="btn btn-default">
+        <input
+          type="submit"
+          ng-click = 'delete()'
+          name="delete"
+          value="Delete"
+          class="btn btn-default">
   </div>
 </form>

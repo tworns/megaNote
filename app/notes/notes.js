@@ -26,19 +26,28 @@
     NotesService.getNotes().then(function(){
       $scope.notes = NotesService.notes;
     });
-
-    $scope.editing = false;
-    $scope.notes = [];
     $scope.note = {
       title: '',
-      data: ''
+      body_html: ''
     };
-    $scope.addNote = function(){
-      $scope.notes.push($scope.note);
-      $scope.note = { title: '', data: '' };
+    $scope.save = function(){
+      NotesService.create($scope.note);
+      $scope.note = { title: '', body_html: '' };
     };
     $scope.edit = function(note){
       $scope.note = note;
+    };
+    $scope.clearForm = function(){
+      $scope.note = { title: '', body_html: '' };
+    };
+    $scope.delete = function(){
+      NotesService.delete($scope.note);
+      $scope.notes.shift();
+      $scope.note = { title: '', body_html: '' };
+    };
+    $scope.update = function(){
+      NotesService.update($scope.note);
+      $scope.note = { title: '', body_html: '' };
     };
   }
 
