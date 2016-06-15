@@ -37,6 +37,7 @@
       else {
         NotesService.create($scope.note);
       }
+      $scope.note = res.data.note;
       $scope.note = { title: '', body_html: '' };
     };
     $scope.edit = function(note){
@@ -46,14 +47,13 @@
       $scope.note = { title: '', body_html: '' };
     };
     $scope.delete = function(){
+      NotesService.delete($scope.note).then($scope.note = { title: '', body_html: '' });
+      // for(var i = 0; i< $scope.notes.length; i++) {
+      //   if($scope.notes[i].id === $scope.note.id && $scope.note[i]._id !== undefined){
+      //     $scope.notes.splice(i,1);
+      //   }
+      // }
 
-      for(var i = 0; i< $scope.notes.length; i++) {
-        if($scope.notes[i].id === $scope.note.id){
-          $scope.notes.splice(i,1);
-        }
-      }
-      NotesService.delete($scope.note);
-      $scope.note = { title: '', body_html: '' };
     };
     $scope.update = function(){
       NotesService.update($scope.note);

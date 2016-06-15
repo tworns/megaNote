@@ -25,7 +25,8 @@
     };
     service.delete = function(note) {
       var notesPromise = $http.delete('https://meganote.herokuapp.com/notes/' + note._id, { note: note});
-      notesPromise.then(function(){
+      notesPromise.then(function(res){
+        service.removeById(res.data._id);
       });
       return notesPromise;
 

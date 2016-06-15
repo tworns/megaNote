@@ -32,6 +32,7 @@ a:link, a:visited, a:hover, a:active {
   color: #FE5F55; }
 
 i.fa-trash-o {
+  cursor: 'pointer';
   color: #ccc;
   font-size: 150%;
   vertical-align: middle;
