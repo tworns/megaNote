@@ -11,6 +11,7 @@ Based on the curriculum for [Xtern Bootcamp 2016](http://bootcamp16.getfretless.
 * [NPM (Node Package Manager)] (https://github.com/npm/npm)
 * [Gulp](https://npmjs.com/package/gulp) -build system
 * [Babel](https://babeljs.io) -Converts ES6 to ES5
+* ESLint - A linter for Javascript, configurations are included in the repo as .eslintrc, but may be removed or replaced with no functionality issues.
 
 >**NOTE:** This is the front end only, for corresponding API, see [Meganote Server](https://github.com/tworns/meganote-server)
 
