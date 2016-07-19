@@ -6,7 +6,7 @@ Based on the curriculum for [Xtern Bootcamp 2016](http://bootcamp16.getfretless.
 ## Technical Overview
 
 * [Uses AngularJS 1.x](https://angularjs.org)
-* {UI-router](https://github.com/angular-ui/ui-router)
+* [UI-router](https://github.com/angular-ui/ui-router)
 * [ECMAScript 2016 (ES6)](https://es6-features.org/)
 * [NPM (Node Package Manager)] (https://github.com/npm/npm)
 * [Gulp](https://npmjs.com/package/gulp) -build system
